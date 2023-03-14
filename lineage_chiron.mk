@@ -21,8 +21,14 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from chiron device
 $(call inherit-product, device/xiaomi/chiron/device.mk)
 
-# Inherit some common Lineage stuff.
+# Inherit some common Aosp stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+
+TARGET_INCLUDE_LIVE_WALLPAPERS := true
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+USE_PIXEL_CHARGER_IMAGES := true
 
 PRODUCT_NAME := lineage_chiron
 PRODUCT_DEVICE := chiron
@@ -32,7 +38,12 @@ PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="chiron-user 8.0.0 OPR1.170623.027 V9.5.4.0.ODEMIFA release-keys"
+# Fingerprint
+BUILD_FINGERPRINT := google/cheetah/cheetah:13/TQ1A.230205.002/9471150:user/release-keys
+BUILD_DESCRIPTION := cheetah-user 13 TQ1A.230205.002 9471150 release-keys
 
-BUILD_FINGERPRINT := Xiaomi/chiron/chiron:8.0.0/OPR1.170623.027/V9.5.4.0.ODEMIFA:user/release-keys
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.fingerprint=$(BUILD_FINGERPRINT)
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRIVATE_BUILD_DESC="$(BUILD_DESCRIPTION)"
