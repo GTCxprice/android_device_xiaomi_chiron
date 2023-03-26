@@ -24,3 +24,4 @@ Camera  | 12 MP, f/2.0, phase detection autofocus, dual-LED (dual tone) flash
 ## Device picture
 
 ![Xiaomi Mi MIX 2](https://i8.mifile.cn/a1/pms_1505401464.03824312!560x560.jpg "Xiaomi Mi MIX 2 in black")
+HELLO I"M FROM NIGERIA , CALL ME N
